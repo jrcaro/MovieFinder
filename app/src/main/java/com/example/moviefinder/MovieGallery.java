@@ -33,19 +33,21 @@ public class MovieGallery extends AppCompatActivity {
         setContentView(R.layout.activity_movie_gallery);
         Intent intent = getIntent();
         String txtSearch = intent.getStringExtra(intent.EXTRA_TEXT);
+        txtSearch = txtSearch.substring(0,1).toUpperCase() + txtSearch.substring(1);
 
         MovieService movieService = APIClient.getClient().create(MovieService.class);
 
-        Call<Movie> call = movieService.getMovie(API_KEY, txtSearch);
+        Call<Movie> call = movieService.getMovie(API_KEY, txtSearch, "full");
         call.enqueue(new Callback<Movie>() {
             @Override
             public void onResponse(Call<Movie> call, Response<Movie> response) {
                 Movie mov = response.body();
+                //String jo = response.body().toString();
             }
 
             @Override
             public void onFailure(Call<Movie> call, Throwable t) {
-
+                call.cancel();
             }
         });
     }
