@@ -36,8 +36,14 @@ public class MovieGallery extends AppCompatActivity {
         txtSearch = txtSearch.substring(0,1).toUpperCase() + txtSearch.substring(1);
 
         MovieService movieService = APIClient.getClient().create(MovieService.class);
+        getMovieList(movieService, txtSearch);
+        getMovie(movieService, txtSearch);
 
-        Call<Movie> call = movieService.getMovie(API_KEY, txtSearch, "full");
+
+    }
+
+    private void getMovie(MovieService service, String search){
+        Call<Movie> call = service.getMovie(API_KEY, search, "full");
         call.enqueue(new Callback<Movie>() {
             @Override
             public void onResponse(Call<Movie> call, Response<Movie> response) {
@@ -47,6 +53,22 @@ public class MovieGallery extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Movie> call, Throwable t) {
+                call.cancel();
+            }
+        });
+    }
+
+    private void getMovieList(MovieService service, String search){
+        Call<List<MovieList>> call = service.getMovieList(API_KEY, search);
+        call.enqueue(new Callback<List<MovieList>>() {
+            @Override
+            public void onResponse(Call<List<MovieList>> call, Response<List<MovieList>> response) {
+                List<MovieList> movL = response.body();
+                //String jo = response.body().toString();
+            }
+
+            @Override
+            public void onFailure(Call<List<MovieList>> call, Throwable t) {
                 call.cancel();
             }
         });
