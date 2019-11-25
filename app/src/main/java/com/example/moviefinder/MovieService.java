@@ -1,7 +1,5 @@
 package com.example.moviefinder;
 
-import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -15,7 +13,7 @@ public interface MovieService {
     );
 
     @GET("/?")
-    Call<List<MoviePage>> getMovieList(@Query("apikey") String apiKey,
+    Call<MoviePage> getMovieList(@Query("apikey") String apiKey,
                                    @Query("s") String search
     );
 }

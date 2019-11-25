@@ -3,7 +3,8 @@ package com.example.moviefinder;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
-import retrofit2.converter.simplexml.SimpleXmlConverterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 
 public class APIClient {
 
@@ -18,11 +19,9 @@ public class APIClient {
 
         retrofit = new Retrofit.Builder()
                 .baseUrl("http://www.omdbapi.com")
-                .addConverterFactory(SimpleXmlConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();
-
-
 
         return retrofit;
     }

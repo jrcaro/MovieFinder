@@ -4,11 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -16,22 +11,18 @@ import retrofit2.Response;
 
 public class MovieGallery extends AppCompatActivity {
     private  final static String API_KEY = "b55fd2c4";
-    ListView list;
-    ArrayList<String> titles = new ArrayList<>();
-    ArrayAdapter arrayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_gallery);
-        Intent intent = getIntent();
+        Intent intent = getIntent(); //recibe el intent de la main activity
         String txtSearch = intent.getStringExtra(intent.EXTRA_TEXT);
-        txtSearch = txtSearch.substring(0,1).toUpperCase() + txtSearch.substring(1);
+        //txtSearch = txtSearch.substring(0,1).toUpperCase() + txtSearch.substring(1); //pone en mayuscula la primera letra
 
-        MovieService movieService = APIClient.getClient().create(MovieService.class);
-        getMovieList(movieService, txtSearch);
-        getMovie(movieService, txtSearch);
+        MovieService movieService = APIClient.getClient().create(MovieService.class); //crea el servicio
 
+        getMovieList(movieService, txtSearch); //llama a la implementacion
 
     }
 
@@ -40,8 +31,6 @@ public class MovieGallery extends AppCompatActivity {
         call.enqueue(new Callback<MovieComplete>() {
             @Override
             public void onResponse(Call<MovieComplete> call, Response<MovieComplete> response) {
-                MovieComplete mov = response.body();
-                //String jo = response.body().toString();
             }
 
             @Override
@@ -52,16 +41,15 @@ public class MovieGallery extends AppCompatActivity {
     }
 
     private void getMovieList(MovieService service, String search){
-        Call<List<MoviePage>> call = service.getMovieList(API_KEY, search);
-        call.enqueue(new Callback<List<MoviePage>>() {
+        Call<MoviePage> call = service.getMovieList(API_KEY, search);
+        call.enqueue(new Callback<MoviePage>() {
             @Override
-            public void onResponse(Call<List<MoviePage>> call, Response<List<MoviePage>> response) {
-                List<MoviePage> movL = response.body();
-                //String jo = response.body().toString();
+            public void onResponse(Call<MoviePage> call, Response<MoviePage> response) {
+
             }
 
             @Override
-            public void onFailure(Call<List<MoviePage>> call, Throwable t) {
+            public void onFailure(Call<MoviePage> call, Throwable t) {
                 call.cancel();
             }
         });
