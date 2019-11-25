@@ -1,25 +1,28 @@
 package com.example.moviefinder;
 
+import java.io.Serializable;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
-import org.simpleframework.xml.Element;
-import org.simpleframework.xml.Root;
+public class Search implements Serializable
+{
 
-@Root(strict = false)
-public class MovieList {
-    @Element("Title")
+    @SerializedName("Title")
+    @Expose
     private String title;
-
-    @Element("Year")
+    @SerializedName("Year")
+    @Expose
     private String year;
-
-    @Element("imdbID")
-    private String imdbid;
-
-    @Element("Type")
+    @SerializedName("imdbID")
+    @Expose
+    private String imdbID;
+    @SerializedName("Type")
+    @Expose
     private String type;
-
-    @Element("Poster")
+    @SerializedName("Poster")
+    @Expose
     private String poster;
+    private final static long serialVersionUID = 503393519403688216L;
 
     public String getTitle() {
         return title;
@@ -37,12 +40,12 @@ public class MovieList {
         this.year = year;
     }
 
-    public String getImdbid() {
-        return imdbid;
+    public String getImdbID() {
+        return imdbID;
     }
 
-    public void setImdbid(String imdbid) {
-        this.imdbid = imdbid;
+    public void setImdbID(String imdbID) {
+        this.imdbID = imdbID;
     }
 
     public String getType() {
@@ -60,4 +63,5 @@ public class MovieList {
     public void setPoster(String poster) {
         this.poster = poster;
     }
+
 }

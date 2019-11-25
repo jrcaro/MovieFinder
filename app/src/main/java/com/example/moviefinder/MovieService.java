@@ -9,13 +9,13 @@ import retrofit2.http.Query;
 public interface MovieService {
 
     @GET("/?")
-    Call<Movie> getMovie(@Query("apikey") String apiKey,
-                         @Query("t") String search,
-                         @Query("plot") String plt
+    Call<MovieComplete> getMovie(@Query("apikey") String apiKey,
+                                 @Query("t") String search,
+                                 @Query("plot") String plt
     );
 
     @GET("/?")
-    Call<List<MovieList>> getMovieList(@Query("apikey") String apiKey,
+    Call<List<MoviePage>> getMovieList(@Query("apikey") String apiKey,
                                    @Query("s") String search
     );
 }

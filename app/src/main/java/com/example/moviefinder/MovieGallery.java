@@ -7,19 +7,12 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
-import okhttp3.Interceptor;
-import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MovieGallery extends AppCompatActivity {
     private  final static String API_KEY = "b55fd2c4";
@@ -43,32 +36,32 @@ public class MovieGallery extends AppCompatActivity {
     }
 
     private void getMovie(MovieService service, String search){
-        Call<Movie> call = service.getMovie(API_KEY, search, "full");
-        call.enqueue(new Callback<Movie>() {
+        Call<MovieComplete> call = service.getMovie(API_KEY, search, "full");
+        call.enqueue(new Callback<MovieComplete>() {
             @Override
-            public void onResponse(Call<Movie> call, Response<Movie> response) {
-                Movie mov = response.body();
+            public void onResponse(Call<MovieComplete> call, Response<MovieComplete> response) {
+                MovieComplete mov = response.body();
                 //String jo = response.body().toString();
             }
 
             @Override
-            public void onFailure(Call<Movie> call, Throwable t) {
+            public void onFailure(Call<MovieComplete> call, Throwable t) {
                 call.cancel();
             }
         });
     }
 
     private void getMovieList(MovieService service, String search){
-        Call<List<MovieList>> call = service.getMovieList(API_KEY, search);
-        call.enqueue(new Callback<List<MovieList>>() {
+        Call<List<MoviePage>> call = service.getMovieList(API_KEY, search);
+        call.enqueue(new Callback<List<MoviePage>>() {
             @Override
-            public void onResponse(Call<List<MovieList>> call, Response<List<MovieList>> response) {
-                List<MovieList> movL = response.body();
+            public void onResponse(Call<List<MoviePage>> call, Response<List<MoviePage>> response) {
+                List<MoviePage> movL = response.body();
                 //String jo = response.body().toString();
             }
 
             @Override
-            public void onFailure(Call<List<MovieList>> call, Throwable t) {
+            public void onFailure(Call<List<MoviePage>> call, Throwable t) {
                 call.cancel();
             }
         });
