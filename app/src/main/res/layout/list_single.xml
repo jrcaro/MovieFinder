@@ -9,17 +9,26 @@
             android:layout_height="200dp"/>
         <TextView
             android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="66dp" />
+            android:layout_width="fill_parent"
+            android:layout_height="66dp"
+            android:gravity="start"
+            android:textAlignment="gravity"
+            android:textSize="20sp"/>
         <TextView
             android:id="@+id/year"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="66dp"
-            android:layout_marginTop="66dp"/>
+            android:layout_marginTop="66dp"
+            android:gravity="start"
+            android:textAlignment="gravity"
+            android:textSize="20sp"/>
         <TextView
             android:id="@+id/type"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="66dp"
-            android:layout_marginTop="133dp"/>
+            android:layout_marginTop="133dp"
+            android:gravity="start"
+            android:textAlignment="gravity"
+            android:textSize="20sp"/>
     </TableRow>
 </TableLayout>

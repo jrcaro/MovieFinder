@@ -13,7 +13,9 @@ public interface MovieService {
     );
 
     @GET("/?")
-    Call<MoviePage> getMovieList(@Query("apikey") String apiKey,
-                                   @Query("s") String search
+    Call<MoviePage> loadPageMovie(@Query("apikey") String apiKey,
+                                 @Query("s") String search,
+                                 @Query("page") int page
+
     );
 }

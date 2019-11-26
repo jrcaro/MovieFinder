@@ -8,35 +8,35 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class CustomList extends ArrayAdapter<String> {
-    private final Activity context;
-    private final String[] title;
-    private final String[] poster;
-    private final String[] year;
-    private final String[] type;
+import com.squareup.picasso.Picasso;
+import java.util.List;
 
-    public CustomList(Activity context, String[] title, String[] poster, String[] year, String[] type) {
-        super(context, R.layout.list_single, title);
-        this.context = context;
-        this.title = title;
-        this.poster = poster;
-        this.year = year;
-        this.type = type;
+public class CustomList extends ArrayAdapter<Search> {
+    public CustomList(Activity context, List<Search> movie) {
+        super(context, R.layout.list_single, movie);
     }
 
     @Override
     public View getView(int position, View view, ViewGroup parent) {
-        LayoutInflater inflater = context.getLayoutInflater();
-        View rowView= inflater.inflate(R.layout.list_single, null, true);
-        TextView itemTitle = (TextView) rowView.findViewById(R.id.title);
-        TextView itemYear = (TextView) rowView.findViewById(R.id.year);
-        TextView itemType = (TextView) rowView.findViewById(R.id.type);
-        ImageView imageView = (ImageView) rowView.findViewById(R.id.img);
+        // Get the data item for this position
+        Search movie = getItem(position);
+        // Check if an existing view is being reused, otherwise inflate the view
+        if (view == null) {
+            view = LayoutInflater.from(getContext()).inflate(R.layout.list_single, parent, false);
+        }
+        // Lookup view for data population
+        TextView title = (TextView) view.findViewById(R.id.title);
+        TextView type = (TextView) view.findViewById(R.id.type);
+        TextView year = (TextView) view.findViewById(R.id.year);
+        ImageView img = (ImageView) view.findViewById(R.id.img);
 
-        itemTitle.setText(title[position]);
-        itemYear.setText(year[position]);
-        itemType.setText(type[position]);
-        //imagen poster
-        return rowView;
+        // Populate the data into the template view using the data object
+        title.setText(movie.getTitle());
+        year.setText(movie.getYear());
+        type.setText(movie.getType());
+        Picasso.with(getContext()).load(movie.getPoster()).into(img);
+
+        // Return the completed view to render on screen
+        return view;
     }
 }
