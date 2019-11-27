@@ -1,26 +1,28 @@
 package com.example.moviefinder;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.SearchView;
 
-public class MainActivity extends AppCompatActivity {
-    SearchView searchView;
+public class SearchActivity extends AppCompatActivity  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_search);
 
-        searchView = (SearchView) findViewById(R.id.searchView);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        SearchView searchView = (SearchView) findViewById(R.id.searchView);
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 System.out.println((query));
-                Intent intent = new Intent(MainActivity.this, MovieGallery.class);
+                Intent intent = new Intent(SearchActivity.this, MovieGalleryActivity.class);
                 intent.putExtra(Intent.EXTRA_TEXT, query);
                 startActivity(intent);
                 return false;

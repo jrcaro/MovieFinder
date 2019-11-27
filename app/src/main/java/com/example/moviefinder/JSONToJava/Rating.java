@@ -1,4 +1,4 @@
-package com.example.moviefinder;
+package com.example.moviefinder.JSONToJava;
 
 import java.io.Serializable;
 import com.google.gson.annotations.Expose;
