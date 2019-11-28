@@ -47,25 +47,86 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/plot"
                 android:layout_below="@+id/poster"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="30dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/director"
+                android:text="@string/director"
                 android:layout_below="@+id/plot"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/actors"
+                android:text="@string/actors"
                 android:layout_below="@+id/director"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/genre"
+                android:text="@string/genre"
                 android:layout_below="@+id/actors"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/year"
+                android:text="@string/year"
+                android:layout_below="@+id/genre"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rated"
+                android:text="@string/rated"
+                android:layout_below="@+id/year"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/released"
+                android:text="@string/released"
+                android:layout_below="@+id/rated"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/writer"
+                android:text="@string/writers"
+                android:layout_below="@+id/released"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/awards"
+                android:text="@string/awards"
+                android:layout_below="@+id/writer"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imdbRating"
+                android:text="@string/imdbRating"
+                android:layout_below="@+id/awards"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/boxOffice"
+                android:text="@string/boxOffice"
+                android:layout_below="@+id/imdbRating"/>
+
+            <ExpandableListView
+                android:id="@+id/expandableListView"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
+                android:divider="@android:color/darker_gray"
+                android:dividerHeight="0.5dp"
+                android:layout_below="@+id/boxOffice"/>
 
         </RelativeLayout>
     </ScrollView>

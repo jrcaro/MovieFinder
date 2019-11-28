@@ -1,5 +1,15 @@
  <resources>
-    <string name="app_name">Movie Finder</string>
+     <string name="app_name">Movie Finder</string>
      <string name="next_btn">Next</string>
      <string name="prev_btn">Previous</string>
+     <string name="director"><u>Director</u>:\u0020</string>
+     <string name="genre"><u>Genre</u>:\u0020</string>
+     <string name="actors"><u>Cast</u>:\u0020</string>
+     <string name="writers"><u>Writers</u>:\u0020</string>
+     <string name="year"><u>Year</u>:\u0020 </string>
+     <string name="rated"><u>Rated</u>:\u0020</string>
+     <string name="released"><u>Released:</u>\u0020</string>
+     <string name="awards"><u>Awards</u>:\u0020</string>
+     <string name="imdbRating"><u>IMBD Rating</u>:\u0020</string>
+     <string name="boxOffice"><u>Box Office</u>:\u0020</string>
 </resources>

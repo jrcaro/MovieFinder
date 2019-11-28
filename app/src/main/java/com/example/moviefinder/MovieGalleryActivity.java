@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import com.example.moviefinder.APIService.APIClient;
 import com.example.moviefinder.APIService.MovieService;
+import com.example.moviefinder.CustomAdapter.CustomList;
 import com.example.moviefinder.JSONToJava.MoviePage;
 import com.example.moviefinder.JSONToJava.Search;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.moviefinder;
+package com.example.moviefinder.CustomAdapter;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.moviefinder.JSONToJava.Search;
+import com.example.moviefinder.R;
 import com.squareup.picasso.Picasso;
 import java.util.List;
 
