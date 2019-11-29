@@ -1,15 +1,15 @@
  <resources>
-     <string name="app_name">Movie Finder</string>
-     <string name="next_btn">Next</string>
-     <string name="prev_btn">Previous</string>
-     <string name="director"><u>Director</u>:\u0020</string>
-     <string name="genre"><u>Genre</u>:\u0020</string>
-     <string name="actors"><u>Cast</u>:\u0020</string>
-     <string name="writers"><u>Writers</u>:\u0020</string>
-     <string name="year"><u>Year</u>:\u0020 </string>
-     <string name="rated"><u>Rated</u>:\u0020</string>
-     <string name="released"><u>Released:</u>\u0020</string>
-     <string name="awards"><u>Awards</u>:\u0020</string>
-     <string name="imdbRating"><u>IMBD Rating</u>:\u0020</string>
-     <string name="boxOffice"><u>Box Office</u>:\u0020</string>
+      <string name="app_name">Movie Finder</string>
+      <string name="next_btn">Next</string>
+      <string name="prev_btn">Previous</string>
+      <string name="director"><b><u>Director</u></b>:\u0020</string>
+      <string name="genre"><b><u>Genre</u></b>:\u0020</string>
+      <string name="actors"><b><u>Cast</u></b>:\u0020</string>
+      <string name="writers"><b><u>Writers</u></b>:\u0020</string>
+      <string name="year"><b><u>Year</u></b>:\u0020 </string>
+      <string name="rated"><b><u>Rated</u></b>:\u0020</string>
+      <string name="awards"><b><u>Awards</u></b>:\u0020</string>
+      <string name="imdbRating"><b><u>IMBD Rating</u></b>:\u0020</string>
+      <string name="boxOffice"><b><u>Box Office</u></b>:\u0020</string>
+       <string name="ratings"><b><u>Ratings</u></b>:\u0020</string>
 </resources>

@@ -13,9 +13,9 @@ import com.example.moviefinder.R;
 import com.squareup.picasso.Picasso;
 import java.util.List;
 
-public class CustomList extends ArrayAdapter<Search> {
-    public CustomList(Activity context, List<Search> movie) {
-        super(context, R.layout.list_single, movie);
+public class CustomListGallery extends ArrayAdapter<Search> {
+    public CustomListGallery(Activity context, List<Search> movie) {
+        super(context, R.layout.list_movie, movie);
     }
 
     @Override
@@ -24,7 +24,7 @@ public class CustomList extends ArrayAdapter<Search> {
         Search movie = getItem(position);
         // Check if an existing view is being reused, otherwise inflate the view
         if (view == null) {
-            view = LayoutInflater.from(getContext()).inflate(R.layout.list_single, parent, false);
+            view = LayoutInflater.from(getContext()).inflate(R.layout.list_movie, parent, false);
         }
         // Lookup view for data population
         TextView title = (TextView) view.findViewById(R.id.title);
