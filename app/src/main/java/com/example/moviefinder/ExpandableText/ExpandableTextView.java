@@ -10,7 +10,7 @@ import com.example.moviefinder.R;
 
 public class ExpandableTextView extends AppCompatTextView {
     private static final int DEFAULT_TRIM_LENGTH = 200;
-    private static final String ELLIPSIS = ".....";
+    private static final String ELLIPSIS = "...";
 
     private CharSequence originalText;
     private CharSequence trimmedText;

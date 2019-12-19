@@ -8,20 +8,20 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.moviefinder.JSONToJava.Search;
+import com.example.moviefinder.JSONToJava.SummaryMovie;
 import com.example.moviefinder.R;
 import com.squareup.picasso.Picasso;
 import java.util.List;
 
-public class CustomListGallery extends ArrayAdapter<Search> {
-    public CustomListGallery(Activity context, List<Search> movie) {
+public class CustomListGallery extends ArrayAdapter<SummaryMovie> {
+    public CustomListGallery(Activity context, List<SummaryMovie> movie) {
         super(context, R.layout.list_movie, movie);
     }
 
     @Override
     public View getView(int position, View view, ViewGroup parent) {
         // Get the data item for this position
-        Search movie = getItem(position);
+        SummaryMovie movie = getItem(position);
         // Check if an existing view is being reused, otherwise inflate the view
         if (view == null) {
             view = LayoutInflater.from(getContext()).inflate(R.layout.list_movie, parent, false);

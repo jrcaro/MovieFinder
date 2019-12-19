@@ -10,7 +10,7 @@ public class MoviePage implements Serializable
 
     @SerializedName("Search")
     @Expose
-    private List<Search> search = null;
+    private List<SummaryMovie> summaryMovies = null;
     @SerializedName("totalResults")
     @Expose
     private String totalResults;
@@ -19,12 +19,12 @@ public class MoviePage implements Serializable
     private String response;
     private final static long serialVersionUID = 5959300877853489327L;
 
-    public List<Search> getSearch() {
-        return search;
+    public List<SummaryMovie> getSummaryMovies() {
+        return summaryMovies;
     }
 
-    public void setSearch(List<Search> search) {
-        this.search = search;
+    public void setSummaryMovies(List<SummaryMovie> summaryMovies) {
+        this.summaryMovies = summaryMovies;
     }
 
     public String getTotalResults() {

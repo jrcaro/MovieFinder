@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_search"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OneMovieActivity"></activity>
+        <activity android:name=".OneMovieActivity"/>
         <activity android:name=".MovieGalleryActivity" />
         <activity android:name=".SearchActivity">
             <intent-filter>

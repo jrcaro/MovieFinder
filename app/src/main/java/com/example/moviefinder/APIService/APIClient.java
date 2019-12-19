@@ -18,7 +18,7 @@ public class APIClient {
 
 
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://www.omdbapi.com")
+                .baseUrl("https://www.omdbapi.com")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();

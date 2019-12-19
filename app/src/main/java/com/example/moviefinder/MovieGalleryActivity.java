@@ -14,7 +14,7 @@ import com.example.moviefinder.APIService.APIClient;
 import com.example.moviefinder.APIService.MovieService;
 import com.example.moviefinder.CustomAdapter.CustomListGallery;
 import com.example.moviefinder.JSONToJava.MoviePage;
-import com.example.moviefinder.JSONToJava.Search;
+import com.example.moviefinder.JSONToJava.SummaryMovie;
 import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -25,7 +25,7 @@ public class MovieGalleryActivity extends AppCompatActivity {
     private final static String API_KEY = "b55fd2c4";
     private final static int itemByPage = 10;
     private static int totalPages = 0;
-    private List<Search> moviesList;
+    private List<SummaryMovie> moviesList;
     private ListView list;
     public int page = 1;
 
@@ -92,7 +92,7 @@ public class MovieGalleryActivity extends AppCompatActivity {
                     if (resto < 5) tempP++;
                     totalPages = tempP;
                 }
-                moviesList = response.body().getSearch();
+                moviesList = response.body().getSummaryMovies();
                 CustomListGallery listAdapter = new CustomListGallery(MovieGalleryActivity.this, moviesList);
                 list = (ListView)findViewById(R.id.list);
                 list.setAdapter(listAdapter);

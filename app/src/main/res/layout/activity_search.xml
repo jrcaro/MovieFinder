@@ -6,7 +6,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     tools:context=".SearchActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/movie_poster">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
