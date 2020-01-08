@@ -21,7 +21,7 @@ public class SearchActivity extends AppCompatActivity  {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                System.out.println((query));
+                //System.out.println((query));
                 Intent intent = new Intent(SearchActivity.this, MovieGalleryActivity.class);
                 intent.putExtra(Intent.EXTRA_TEXT, query);
                 startActivity(intent);

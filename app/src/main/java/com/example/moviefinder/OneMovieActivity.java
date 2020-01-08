@@ -34,11 +34,11 @@ public class OneMovieActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         Intent intent = getIntent(); //recibe el intent de la main activity
-        String title = intent.getStringExtra(intent.EXTRA_TEXT);
+        String imdbID = intent.getStringExtra(intent.EXTRA_TEXT);
 
         //crea el servicio
         MovieService movieService = APIClient.getClient().create(MovieService.class);
-        getMovie(movieService, title);
+        getMovie(movieService, imdbID);
     }
 
     private void getMovie(MovieService service, String search){
@@ -89,6 +89,7 @@ public class OneMovieActivity extends AppCompatActivity {
 
         List<String> ratings = getRatings(resp);
         int sizeText = ratings.size();
+        ratings_textView.append("\n");
         for (String rating : ratings){
             ratings_textView.append("- " + rating + "\n");
         }

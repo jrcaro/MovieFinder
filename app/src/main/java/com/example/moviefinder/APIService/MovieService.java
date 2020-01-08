@@ -11,7 +11,7 @@ public interface MovieService {
 
     @GET("/?")
     Call<MovieComplete> getMovie(@Query("apikey") String apiKey,
-                                 @Query("t") String search,
+                                 @Query("i") String search,
                                  @Query("plot") String plt
     );
 

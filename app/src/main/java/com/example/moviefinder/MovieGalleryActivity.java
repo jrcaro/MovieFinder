@@ -100,9 +100,9 @@ public class MovieGalleryActivity extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view,
                                             int position, long id) {
-                        String title = moviesList.get(position).getTitle();
+                        String imdbID = moviesList.get(position).getImdbID();
                         Intent intent = new Intent(MovieGalleryActivity.this, OneMovieActivity.class);
-                        intent.putExtra(Intent.EXTRA_TEXT, title);
+                        intent.putExtra(Intent.EXTRA_TEXT, imdbID);
                         startActivity(intent);
                     }
                 });
