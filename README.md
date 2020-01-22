@@ -26,7 +26,7 @@ The minimum Android version to install this application is Android 4.4 KitKat.
 
 ## Running the tests
 
-![Search bar](/images/Screenshot_1.moviefinder.jpg=360x640)
+![Search bar](/images/Screenshot_1.moviefinder.jpg)
 ![Movies Gallery](/images/Screenshot_2.moviefinder.jpg)
 ![Movie Info 1](/images/Screenshot_3.moviefinder.jpg)
 ![Movie Info 2](/images/Screenshot_4.moviefinder.jpg)
